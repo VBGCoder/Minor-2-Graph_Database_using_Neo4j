@@ -1,4 +1,4 @@
-#Identity and Access Management using Neo4j Graph Database
+<h1>Identity and Access Management using Neo4j Graph Database</h1>
 Identity and Access Management (IAM) is a critical component of enterprise security, providing the framework for managing user identities and controlling access to resources. README: IAM Implementation with Neo4j
 
 This README file outlines the steps required to implement Identity and Access Management (IAM) using Neo4j as the graph database.
@@ -44,25 +44,4 @@ Modify the sample data to suit your needs, or create your own data.
 Usage
 Once you have set up the IAM implementation with Neo4j, you can use it to manage users, roles, permissions, and access control policies. Here are some example queries you can run in the Neo4j browser:
 
-Create a new user
-CREATE (:User {id: "1234", name: "John Doe"})
-Create a new role
-CREATE (:Role {id: "5678", name: "Admin"})
-Grant a role to a user
-MATCH (u:User {id: "1234"}), (r:Role {id: "5678"})
-CREATE (u)-[:HAS_ROLE]->(r)
-Create a new permission
-CREATE (:Permission {id: "7890", name: "Can Edit Documents"})
-Grant a permission to a role
-MATCH (p:Permission {id: "7890"}), (r:Role {id: "5678"})
-CREATE (r)-[:HAS_PERMISSION]->(p)
-Create an access control policy
-MATCH (r:Role {id: "5678"}), (p:Permission {id: "7890"})
-CREATE (r)-[:CAN_ACCESS]->(p)
-You can also use Cypher queries to retrieve information about users, roles, permissions, and access control policies.
 
-Contributing
-Contributions are welcome! If you find a bug or have a feature request, please open an issue. If you want to contribute code, please open a pull request.
-
-License
-This project is licensed under the MIT License.
